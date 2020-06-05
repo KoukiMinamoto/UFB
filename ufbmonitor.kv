@@ -1,0 +1,144 @@
+UFBWidget:
+
+<UFBWidget>:
+	orientation: 'vertical'
+	size: root.size
+	
+	Label:
+		size_hint_y: 0.25
+		id: title
+		font_size: 20
+		text: 'UFB Monitor'
+
+	BoxLayout:
+		id: switch_timer
+		size_hint_y: 0.25
+		orientation: 'horizontal'	
+		Switch:
+			active: False
+			on_active: root.switch_callback(self, self.active)
+
+		BoxLayout:
+			id: timer
+			orientation: 'vertical'
+			BoxLayout:
+				id: active_time
+				orientation: 'horizontal'
+				Label:
+					text: 'Active:'
+					font_size: 20
+				Spinner:
+					id: active_hour
+					text: '0'
+					values: ('0', '1', '2', '3', '4', '5', '6')
+				Label:
+					text: 'h'
+					font_size: 20
+				Spinner:
+					id: active_min
+					text: '10'
+					values: ('10', '20', '30', '40', '50')
+				Label:
+					text: 'min'
+					font_size: 20
+			BoxLayout:
+				id: interval_time
+				orientation: 'horizontal'
+				Label:
+					text: 'Interval:'
+					font_size: 20
+				Spinner:
+					id: interval_hour
+					text: '0'
+					values: ('0', '1', '2', '3', '4', '5', '6')
+				Label:
+					text: 'h'
+					font_size: 20
+				Spinner:
+					id: interval_min
+					text: '00'
+					values: ('00', '10', '20', '30', '40', '50')
+				Label:
+					text: 'min'
+					font_size: 20
+
+		
+	
+	BoxLayout:
+		orientation: 'horizontal'
+		BoxLayout:
+			orientation: 'vertical'
+			Label:
+				text: 'Flow Rate'
+				font_size: 20
+				text_size: self.size
+				size_hint_y: 0.5
+				valign: 'bottom'
+				halign: 'center'
+			Label:
+				id: flow_rate
+				font_size: 68
+				text: root.flow_text
+				text_size: self.size
+				valign: 'bottom'
+				halign: 'center'
+			Label:
+				text: '[V]'
+				text_size: self.size
+				font_size: 20
+				size_hint_y: 0.6
+				valign: 'top'
+				halign: 'center'
+		BoxLayout:
+			orientation: 'vertical'
+			Label:
+				text: 'Vacuum Pressure'
+				text_size: self.size
+				font_size: 20
+				size_hint_y: 0.5
+				valign: 'bottom'
+				halign: 'center'		
+			Label:
+				id: vacuum_pressure
+				font_size: 68
+				text: root.vacuum_text
+				text_size: self.size
+				valign: 'bottom'
+				halign: 'center'
+			Label:
+				text: '[V]'
+				text_size: self.size
+				font_size: 20
+				size_hint_y: 0.6
+				valign: 'top'
+				halign: 'center'
+		BoxLayout:
+			orientation: 'vertical'
+			Label:
+				text: 'Revolution'
+				text_size: self.size
+				font_size: 20
+				size_hint_y: 0.5	
+				valign: 'bottom'
+				halign: 'center'	
+			Label:
+				id: revolution
+				font_size: 68
+				text: root.revo_text
+				text_size: self.size
+				valign: 'bottom'
+				halign: 'center'
+			Label:
+				text: '[rpm]'
+				text_size: self.size
+				font_size: 20
+				size_hint_y: 0.6
+				valign: 'top'
+				halign: 'center'
+
+	BoxLayout:
+		id: footer
+		orientation: 'horizontal'
+		size_hint_y: 0.2
+		
+		
